@@ -5,6 +5,12 @@
   "references": [
     {
       "path": "./apps/langmate"
+    },
+    {
+      "path": "./apps/web-e2e"
+    },
+    {
+      "path": "./apps/web"
     }
   ]
 }
