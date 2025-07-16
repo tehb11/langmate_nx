@@ -10,6 +10,8 @@ const { assetExts, sourceExts } = defaultConfig.resolver;
  *
  * @type {import('metro-config').MetroConfig}
  */
+// @type {import('@react-native/metro-config').MetroConfig} 0.80.1
+
 const customConfig = {
   cacheVersion: '@langmate/langmate',
   transformer: {
