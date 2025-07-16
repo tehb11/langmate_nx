@@ -2,7 +2,12 @@
   "name": "@langmate/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve": "nx serve langmate",
+    "start:app": "nx start langmate --reset-cache",
+    "android": "nx run-android langmate",
+    "ios": "nx run-ios langmate"
+  },
   "private": true,
   "dependencies": {
     "react": "~18.3.1",
