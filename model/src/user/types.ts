@@ -1,5 +1,13 @@
 export type User = {
   id: string;
   email: string;
-  password: string;
+  username: string;
+  firstName: string;
+  lastName: string;
+};
+
+export type Auth = {
+  accessToken: string;
+  refreshToken: string;
+  isAuth?: boolean;
 };

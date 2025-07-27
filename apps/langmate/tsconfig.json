@@ -7,6 +7,12 @@
       "path": "../../services"
     },
     {
+      "path": "../../model"
+    },
+    {
+      "path": "../../utils"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {

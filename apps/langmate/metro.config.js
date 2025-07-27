@@ -1,5 +1,8 @@
 const { withNxMetro } = require('@nx/react-native');
 const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
+const { FileStore } = require('metro-cache');
+const path = require('path');
+const os = require('os');
 
 const defaultConfig = getDefaultConfig(__dirname);
 const { assetExts, sourceExts } = defaultConfig.resolver;
@@ -16,8 +19,16 @@ const customConfig = {
   cacheVersion: '@langmate/langmate',
   transformer: {
     babelTransformerPath: require.resolve('react-native-svg-transformer'),
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: true,
+        inlineRequires: true,
+      },
+    }),
   },
+  cacheStores: [new FileStore({ root: path.join(os.tmpdir(), 'metro-cache') })],
   resolver: {
+    enableGlobalPackages: true, // absolute paths
     assetExts: assetExts.filter((ext) => ext !== 'svg'),
     sourceExts: [...sourceExts, 'cjs', 'mjs', 'svg'],
   },

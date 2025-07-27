@@ -5,7 +5,23 @@
   "dependencies": {
     "react": "*",
     "react-dom": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "@react-navigation/bottom-tabs": "*",
+    "@react-navigation/native": "*",
+    "@react-navigation/native-stack": "*",
+    "@react-navigation/stack": "*",
+    "react-native-size-matters": "*",
+    "react-native-gesture-handler": "*",
+    "react-native-safe-area-context": "*",
+    "react-native-screens": "*",
+    "react-native-tab-view": "*",
+    "react-native-webview": "*",
+    "formik": "*",
+    "react-native-mmkv": "*",
+    "yup": "*",
+    "@tanstack/react-query": "*",
+    "@tanstack/react-store": "*",
+    "react-native-mask-input": "*"
   },
   "devDependencies": {
     "@babel/core": "*",

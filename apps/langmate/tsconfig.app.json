@@ -31,6 +31,12 @@
   "references": [
     {
       "path": "../../services/tsconfig.lib.json"
+    },
+    {
+      "path": "../../model/tsconfig.lib.json"
+    },
+    {
+      "path": "../../utils/tsconfig.lib.json"
     }
   ]
 }

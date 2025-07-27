@@ -3,6 +3,12 @@
   "include": [],
   "references": [
     {
+      "path": "../model"
+    },
+    {
+      "path": "../utils"
+    },
+    {
       "path": "./tsconfig.lib.json"
     }
   ],
