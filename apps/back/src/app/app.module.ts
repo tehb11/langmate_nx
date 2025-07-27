@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ThrottlerModule } from '@nestjs/throttler';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
+import { HealthModule } from './health/health.module';
 import { User } from './users/user.entity';
 import { RefreshToken } from './auth/refresh-token.entity';
 
@@ -14,6 +16,12 @@ import { RefreshToken } from './auth/refresh-token.entity';
       isGlobal: true,
       envFilePath: 'env',
     }),
+    ThrottlerModule.forRoot([
+      {
+        ttl: 60000, // 1 минута
+        limit: 100, // 100 запросов в минуту
+      },
+    ]),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST || 'localhost',
@@ -27,6 +35,7 @@ import { RefreshToken } from './auth/refresh-token.entity';
     }),
     AuthModule,
     UsersModule,
+    HealthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
