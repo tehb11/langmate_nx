@@ -1,0 +1,28 @@
+### Регистрация нового пользователя
+POST http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "username": "testuser",
+  "password": "password123",
+  "firstName": "Test",
+  "lastName": "User"
+}
+
+### Вход пользователя
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+### Получить список пользователей (требует токен)
+GET http://localhost:3000/api/users
+Authorization: Bearer YOUR_JWT_TOKEN_HERE
+
+### Получить профиль текущего пользователя (требует токен)
+GET http://localhost:3000/api/users/profile
+Authorization: Bearer YOUR_JWT_TOKEN_HERE 
