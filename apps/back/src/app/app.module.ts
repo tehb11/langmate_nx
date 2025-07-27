@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/user.entity';
+import { RefreshToken } from './auth/refresh-token.entity';
 
 @Module({
   imports: [
@@ -20,7 +21,7 @@ import { User } from './users/user.entity';
       username: process.env.DB_USERNAME || 'postgres',
       password: process.env.DB_PASSWORD || 'password',
       database: process.env.DB_DATABASE || 'langmate',
-      entities: [User],
+      entities: [User, RefreshToken],
       synchronize: process.env.NODE_ENV !== 'production', // Только для разработки
       logging: process.env.NODE_ENV !== 'production',
     }),

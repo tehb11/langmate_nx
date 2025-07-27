@@ -19,10 +19,22 @@ Content-Type: application/json
   "password": "password123"
 }
 
-### Получить список пользователей (требует токен)
-GET http://localhost:3000/api/users
-Authorization: Bearer YOUR_JWT_TOKEN_HERE
+### Обновление токенов (refresh)
+POST http://localhost:3000/api/auth/refresh
+Content-Type: application/json
 
-### Получить профиль текущего пользователя (требует токен)
+{
+  "refreshToken": "YOUR_REFRESH_TOKEN_HERE"
+}
+
+### Выход из системы (требует access token)
+POST http://localhost:3000/api/auth/logout
+Authorization: Bearer YOUR_ACCESS_TOKEN_HERE
+
+### Получить список пользователей (требует access token)
+GET http://localhost:3000/api/users
+Authorization: Bearer YOUR_ACCESS_TOKEN_HERE
+
+### Получить профиль текущего пользователя (требует access token)
 GET http://localhost:3000/api/users/profile
-Authorization: Bearer YOUR_JWT_TOKEN_HERE 
+Authorization: Bearer YOUR_ACCESS_TOKEN_H 

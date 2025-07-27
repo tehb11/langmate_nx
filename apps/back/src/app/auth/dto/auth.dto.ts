@@ -29,8 +29,14 @@ export class LoginDto {
   password: string;
 }
 
+export class RefreshTokenDto {
+  @IsString()
+  refreshToken: string;
+}
+
 export class AuthResponseDto {
   accessToken: string;
+  refreshToken: string;
   user: {
     id: string;
     email: string;
@@ -38,4 +44,9 @@ export class AuthResponseDto {
     firstName?: string;
     lastName?: string;
   };
+}
+
+export class TokenResponseDto {
+  accessToken: string;
+  refreshToken: string;
 }
