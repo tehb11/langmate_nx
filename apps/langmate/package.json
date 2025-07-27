@@ -60,6 +60,7 @@
     "typescript": "*",
     "typescript-eslint": "*",
     "vite": "*",
-    "vitest": "*"
+    "vitest": "*",
+    "reactotron-react-native": "*"
   }
 }

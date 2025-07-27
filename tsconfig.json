@@ -17,6 +17,12 @@
     },
     {
       "path": "./apps/back"
+    },
+    {
+      "path": "./model"
+    },
+    {
+      "path": "./services"
     }
   ]
 }
